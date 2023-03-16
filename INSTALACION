@@ -27,19 +27,22 @@ $ : gdisk /dev/sda                            # Parametros Home : [n] - [x] - [x
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-[-] : Crear una nueva particion : [n]
-
-[-] : Numero de la particion : [x]
-
-[-] : Sector inicial : [x]
-
-[-] : Sector final : [...]
-
-[-] : Codigo particion : [...]
-
-[-] : Para escribir los cambios : [w]
-
-[-] : Para aceptar los cambios : [y]
+Parametros
+   _____
+     |
+     |----------| Crear una nueva particion : [n]
+     |
+     |----------| Numero de la particion : [x]
+     |
+     |----------| Sector inicial : [x]
+     |
+     |----------| Sector final : [...]
+     |
+     |----------| Codigo particion : [...]
+     |
+     |----------| Para escribir los cambios : [w]
+     |
+     |----------| Para aceptar los cambios : [y]
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -134,11 +137,11 @@ $ : micro /etc/vconsole.conf                  # KEYMAP=es
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-$ : echo pekin > /etc/hostname              # Asignandole un nombre al dispositivo
+$ : echo pekin > /etc/hostname                # Asignandole un nombre al dispositivo
 
-$ : cat /etc/hostname                       # Verificando el nombre del dispositivo
+$ : cat /etc/hostname                         # Verificando el nombre del dispositivo
 
-$ : micro /etc/hosts                        # Direcciones de host
+$ : micro /etc/hosts                          # Direcciones de host
         _____
           |
           |----------| 127.0.0.1 : localhost
@@ -149,21 +152,11 @@ $ : micro /etc/hosts                        # Direcciones de host
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-$ : grub-install --target=x86_64-efi --efi-directory=/ /dev/sda                     # Habilitando grub
+$ : grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub                 # Habilitando grub uefi
 
-$ : grub-mkconfig -o /boot/grub/grub.cfg      # Aarchivo de configuracion : grub
+$ : grub-mkconfig -o /boot/grub/grub.cfg                                                        # Aarchivo de configuracion : grub
 
+$ : reboot
 
-
-
-
-
-
-
-
-
-
-
-
-
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
