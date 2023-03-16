@@ -45,5 +45,35 @@ $ : Para aceptar los cambios : [y]
 
 $ : fdisk -l                                  # Verificando que se hayan creado las particiones
 
-$ : mkfs.fat -F32 /dev/sda1                   # Formateando la particion boot
+$ : mkfs.fat -F32 /dev/sda1                   # Formateando la particion : Boot
+
+$ : mkswap /dev/sda2                          # Formateando la particion : Swap
+
+$ : swapon /dev/sda2                          # Habilitando la particion : Swap
+
+$ : mkfs.ext4 /dev/sda3                       # Formateando la particion : /
+
+$ : mkfs.ext4 /dev/sda4                       # Formateando la particion : Home
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+$ : mount /dev/sda3 /mnt                      # Montando la particion / : /mnt
+
+$ : mkdir -p /mnt/boot                        # Crenado el directorio Boot
+
+$ : mount /dev/sda1 /mnt/boot                 # Montando la particion Boot
+
+$ : mkdir -p /mnt/home                        # Creando el directorio Home
+
+$ : mount /dev/sda4 /mnt/home                 # Montando la particion Home
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+$ : pacstrap /mnt base base-devel linux linux-firmware networkmanager sudo        # instalando paquetes esenciales
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+
+
+
 
