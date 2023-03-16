@@ -52,7 +52,7 @@ $ : mkfs.fat -F32 /dev/sda1                   # Formateando la particion : Boot
 
 $ : mkswap /dev/sda2                          # Formateando la particion : Swap
 
-$ : swapon /dev/sda2                          # Habilitando la particion : Swap
+$ : swapon /dev/sda2                          # Montando la particion : Swap
 
 $ : mkfs.ext4 /dev/sda3                       # Formateando la particion : Raiz : /
 
