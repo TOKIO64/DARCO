@@ -17,11 +17,11 @@ $ : fdisk -l                                  # Identificando las unidades de al
 
 $ : gdisk /dev/sda                            # Parametros : [w] - [y] : Creando una tabla de particiones tipo GPT en la unidad : /dev/sda
 
-$ : gdisk /dev/sda                            # Parametros Boot: [n] - [x] - [x] - [+1G] - [EF00] - [w] - [y]
+$ : gdisk /dev/sda                            # Parametros Boot : [n] - [x] - [x] - [+1G] - [EF00] - [w] - [y]
 
 $ : gdisk /dev/sda                            # Parametros Swap : [n] - [x] - [x] - [+4.8G] - [8200] - [w] - [y]
 
-$ : gdisk /dev/sda                            # Parametros / : [n] - [x] - [x] - [+89G] - [8304] - [w] - [y]
+$ : gdisk /dev/sda                            # Parametros Raiz : [n] - [x] - [x] - [+89G] - [8304] - [w] - [y]
 
 $ : gdisk /dev/sda                            # Parametros Home : [n] - [x] - [x] - [x] - [8302] - [w] - [y]
 
@@ -54,7 +54,7 @@ $ : mkswap /dev/sda2                          # Formateando la particion : Swap
 
 $ : swapon /dev/sda2                          # Habilitando la particion : Swap
 
-$ : mkfs.ext4 /dev/sda3                       # Formateando la particion : /
+$ : mkfs.ext4 /dev/sda3                       # Formateando la particion : Raiz : /
 
 $ : mkfs.ext4 /dev/sda4                       # Formateando la particion : Home
 
@@ -156,7 +156,21 @@ $ : grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub 
 
 $ : grub-mkconfig -o /boot/grub/grub.cfg                                                        # Aarchivo de configuracion : grub
 
-$ : reboot
+$ : exit                                                                                        # Salir de la sesion root
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+$ : umount /dev/sda1                                                                            # Desmontando la particion : Boot
+
+$ : swapoff /dev/sda2                                                                           # Desmontando la particion : Swap
+
+$ : umount /dev/sda3                                                                            # Desmontando la particion Raiz : /
+
+$ : umount /dev/sda4                                                                            # Desmontando la particion : Home
+
+$ : lsblk                                                                                       # verificar el desmontaje
+
+$ : poweroff                                                                                    # Desmontar todas las particiones en : dev/sda
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
