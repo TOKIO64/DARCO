@@ -70,24 +70,25 @@ $ : mount /dev/sda4 /mnt/home                 # Montando la particion Home
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 $ : pacstrap /mnt                             # Instalando paquetes esenciales
-
-[-] : base
-
-[-] : base-devel
-
-[-] : linux
-
-[-] : linux-firmware
-
-[-] : networkmanager
-
-[-] : grub
-
-[-] : wpa_supplicant
-
-[-] : sudo
-
-[-] : micro
+        _____
+          |
+          |----------| base
+          |
+          |----------| base-devel
+          |
+          |----------| linux
+          |
+          |----------| linux-firmware
+          |
+          |----------| networkmanager
+          |
+          |----------| grub
+          |
+          |----------| wpa_supplicant
+          |
+          |----------| sudo
+          |
+          |----------| micro
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -138,17 +139,17 @@ $ : echo pekin > /etc/hostname              # Asignandole un nombre al dispositi
 $ : cat /etc/hostname                       # Verificando el nombre del dispositivo
 
 $ : micro /etc/hosts                        # Direcciones de host
-         ___
+        _____
           |
-          |------------| 127.0.0.1 : localhost
+          |----------| 127.0.0.1 : localhost
           |
-          |------------| :: 1 localhost
+          |----------| :: 1 localhost
           |
-          |------------| 127.0.0.1 : pekin.localhost
+          |----------| 127.0.0.1 : pekin.localhost
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-$ : grub-install /dev/sda                     # Habilitando grub
+$ : grub-install --target=x86_64-efi --efi-directory=/ /dev/sda                     # Habilitando grub
 
 $ : grub-mkconfig -o /boot/grub/grub.cfg      # Aarchivo de configuracion : grub
 
