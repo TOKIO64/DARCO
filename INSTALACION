@@ -27,19 +27,19 @@ $ : gdisk /dev/sda                            # Parametros Home : [n] - [x] - [x
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-$ : Crear una nueva particion : [n]
+[-] : Crear una nueva particion : [n]
 
-$ : Numero de la particion : [x]
+[-] : Numero de la particion : [x]
 
-$ : Sector inicial : [x]
+[-] : Sector inicial : [x]
 
-$ : Sector final : [...]
+[-] : Sector final : [...]
 
-$ : Codigo particion : [...]
+[-] : Codigo particion : [...]
 
-$ : Para escribir los cambios : [w]
+[-] : Para escribir los cambios : [w]
 
-$ : Para aceptar los cambios : [y]
+[-] : Para aceptar los cambios : [y]
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -69,9 +69,98 @@ $ : mount /dev/sda4 /mnt/home                 # Montando la particion Home
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-$ : pacstrap /mnt base base-devel linux linux-firmware networkmanager sudo          # instalando paquetes esenciales
+$ : pacstrap /mnt                             # Instalando paquetes esenciales
+
+[-] : base
+
+[-] : base-devel
+
+[-] : linux
+
+[-] : linux-firmware
+
+[-] : networkmanager
+
+[-] : grub
+
+[-] : wpa_supplicant
+
+[-] : sudo
+
+[-] : micro
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+$ : genfstab -U /mnt >> /mnt/etc/fstab        # Creando un archivo Genfstab y posicionando en el directorio fstab
+
+$ : cat /mnt/etc/fstab                        # Verificando la existencia y el contenido del archivo Genfstab
+
+$ : arch-chroot /mnt                          # Iniciando sesion como root
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+$ : passwd                                    # Definiendo una contraseña para el usuario root
+
+$ : useradd -m calixo                         # Creando un usuario
+
+$ : passwd calixo                             # Definiendo una contraseña para el usuario tokio
+
+$ : usermod -aG wheel calixo                  # Añadiendo al usuario tokio al grupo wheel
+
+$ : groups calixo                             # Comprobando que el usuario tokio este situado en el grupo wheel
+
+$ : micro /etc/sudoers                        # Descomentar : % wheel ALL = ( ALL : ALL ) ALL
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+$ : ls /usr/share/zoneinfo                                           # Visualizando todo el contenido de zoneinfo
+
+$ : ls /usr/share/zoneinfo/Europe                                    # Visualizando todo el contenido de zoneinfo/Europe
+
+$ : ln -sf /usr/share/zoneinfo/Europe/Spain /etc/localtime           # Definiendo nuestra zona horaria
+
+$ : hwclock --systohc
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+$ : micro /etc/locale.gen                     # Definiendo el idioma del sistema : Español e Ingles : UTF8
+
+$ : locale-gen                                # Generando archivos de configuracion regional
+
+$ : micro /etc/locale.conf                    # Mexico : UTF8
+
+$ : micro /etc/vconsole.conf                  # KEYMAP=es
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+$ : echo pekin > /etc/hostname              # Asignandole un nombre al dispositivo
+
+$ : cat /etc/hostname                       # Verificando el nombre del dispositivo
+
+$ : micro /etc/hosts                        # Direcciones de host
+         ___
+          |
+          |------------| 127.0.0.1 : localhost
+          |
+          |------------| :: 1 localhost
+          |
+          |------------| 127.0.0.1 : pekin.localhost
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+$ : grub-install /dev/sda                     # Habilitando grub
+
+$ : grub-mkconfig -o /boot/grub/grub.cfg      # Aarchivo de configuracion : grub
+
+
+
+
+
+
+
+
+
+
 
 
 
