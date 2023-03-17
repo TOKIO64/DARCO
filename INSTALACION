@@ -36,9 +36,9 @@ Parametros
      |
      |----------| Sector inicial : [x]
      |
-     |----------| Sector final : [...]
+     |----------| Sector final : [-]
      |
-     |----------| Codigo particion : [...]
+     |----------| Codigo particion : [-]
      |
      |----------| Para escribir los cambios : [w]
      |
