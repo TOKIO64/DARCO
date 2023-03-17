@@ -131,7 +131,7 @@ $ : micro /etc/locale.gen                                            # Definiend
 
 $ : locale-gen                                                       # Generando archivos de configuracion regional
 
-$ : micro /etc/locale.conf                                           # Mexico : UTF8
+$ : micro /etc/locale.conf                                           # es_MX.UTF-8 UTF-8
 
 $ : micro /etc/vconsole.conf                                         # KEYMAP=es
 
