@@ -17,32 +17,32 @@ $ : fdisk -l                                  # Identificando las unidades de al
 
 $ : gdisk /dev/sda                            # Parametros : [w] - [y] : Creando una tabla de particiones tipo GPT en la unidad : /dev/sda
 
-$ : gdisk /dev/sda                            # Parametros Boot : [n] - [x] - [x] - [+1G] - [EF00] - [w] - [y]
+$ : gdisk /dev/sda                            # Parametros Boot :   n - x - x - +1G - EF00 - w - y
 
-$ : gdisk /dev/sda                            # Parametros Swap : [n] - [x] - [x] - [+4.8G] - [8200] - [w] - [y]
+$ : gdisk /dev/sda                            # Parametros Swap : n - x - x - +4.8G - 8200 - w - y
 
-$ : gdisk /dev/sda                            # Parametros Raiz : [n] - [x] - [x] - [+89G] - [8304] - [w] - [y]
+$ : gdisk /dev/sda                            # Parametros Raiz :  n - x - x - +89G - 8304 - w - y
 
-$ : gdisk /dev/sda                            # Parametros Home : [n] - [x] - [x] - [x] - [8302] - [w] - [y]
+$ : gdisk /dev/sda                            # Parametros Home :     n - x - x - x - 8302 - w - y
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Parametros
    _____
      |
-     |----------| Crear una nueva particion : [n]
+     |----------| Crear una nueva particion : n
      |
-     |----------| Numero de la particion : [x]
+     |----------| Numero de la particion : x
      |
-     |----------| Sector inicial : [x]
+     |----------| Sector inicial : x
      |
-     |----------| Sector final : [-]
+     |----------| Sector final :
      |
-     |----------| Codigo particion : [-]
+     |----------| Codigo particion :
      |
-     |----------| Para escribir los cambios : [w]
+     |----------| Para escribir los cambios : w
      |
-     |----------| Para aceptar los cambios : [y]
+     |----------| Para aceptar los cambios : y
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
@@ -127,21 +127,21 @@ $ : hwclock --systohc
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-$ : micro /etc/locale.gen                     # Definiendo el idioma del sistema : Español e Ingles : UTF8
+$ : micro /etc/locale.gen                                            # Definiendo el idioma del sistema : Español e Ingles : UTF8
 
-$ : locale-gen                                # Generando archivos de configuracion regional
+$ : locale-gen                                                       # Generando archivos de configuracion regional
 
-$ : micro /etc/locale.conf                    # Mexico : UTF8
+$ : micro /etc/locale.conf                                           # Mexico : UTF8
 
-$ : micro /etc/vconsole.conf                  # KEYMAP=es
+$ : micro /etc/vconsole.conf                                         # KEYMAP=es
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-$ : echo pekin > /etc/hostname                # Asignandole un nombre al dispositivo
+$ : echo pekin > /etc/hostname                                       # Asignandole un nombre al dispositivo
 
-$ : cat /etc/hostname                         # Verificando el nombre del dispositivo
+$ : cat /etc/hostname                                                # Verificando el nombre del dispositivo
 
-$ : micro /etc/hosts                          # Direcciones de host
+$ : micro /etc/hosts                                                 # Direcciones de host
         _____
           |
           |----------| 127.0.0.1 : localhost
@@ -176,7 +176,7 @@ $ : poweroff                                                                    
 
 $ : sudo su
 
-$ : systemctl start NetworkManager.service                                                      # creando enlaces simbolicos
+$ : systemctl start NetworkManager.service
 
 $ : systemctl enable NetworkManager
 
@@ -203,6 +203,14 @@ $ : sudo pacman -S
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
+$ : mkdir Repositorio                                                                           # usuario
+
+$ : git clone https://aur.archlinux.org/paru-bin.git                                            # Ampliando el alcance de paquetes de arch
+
+$ : cd paru-bin && makepkg -si
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
 $ : sudo pacman -S
         _____
           |
@@ -215,8 +223,6 @@ $ : sudo pacman -S
           |----------| pipewire-jack
           |
           |----------| pipewire-media-session
-          |
-          |----------| wireplumber
 
 
 $ : systemctl --user start
@@ -245,14 +251,6 @@ $ : systemctl --user enable
               |----------| pipewire-jack.service
               |
               |----------| pipewire-media-session.service
-
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-$ : mkdir Repositorio                                                                           # usuario
-
-$ : git clone https://aur.archlinux.org/paru-bin.git                                            # Ampliando el alcance de paquetes de arch
-
-$ : cd paru-bin && makepkg -si
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
