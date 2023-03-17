@@ -186,7 +186,65 @@ $ : systemctl enable wpa_supplicant
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-$ : sudo pacman -S git kitty xorg xorg-server gdm
+$ : sudo pacman -S
+        _____
+          |
+          |----------| git
+          |
+          |----------| kitty
+          |
+          |----------| xorg
+          |
+          |----------| xorg-server
+          |
+          |----------| xorg-apps
+          |
+          |----------| gdm
+
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+$ : sudo pacman -S
+        _____
+          |
+          |----------| pipewire
+          |
+          |----------| pipewire-alsa
+          |
+          |----------| pipewire-pulse
+          |
+          |----------| pipewire-jack
+          |
+          |----------| pipewire-media-session
+          |
+          |----------| wireplumber
+
+
+$ : systemctl --user start
+            _____
+              |
+              |----------| pipewire.service
+              |
+              |----------| pipewire-alsa.service
+              |
+              |----------| pipewire-pulse.service
+              |
+              |----------| pipewire-jack.service
+              |
+              |----------| pipewire-media-session.service
+
+
+$ : systemctl --user enable
+            _____
+              |
+              |----------| pipewire.service
+              |
+              |----------| pipewire-alsa.service
+              |
+              |----------| pipewire-pulse.service
+              |
+              |----------| pipewire-jack.service
+              |
+              |----------| pipewire-media-session.service
 
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
