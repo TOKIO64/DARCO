@@ -1,0 +1,13 @@
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+$ : wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.7.7-stable.tar.xz
+
+$ : tar -xvf flutter_linux_3.7.7-stable.tar.xz
+
+$ : echo 'export PATH="$PATH:$HOME/Repositorio/flutter/bin"' >> .bashrc           # Añadiendo el directorio bin a las variables de entorno
+
+$ : source .bashrc                                                                # Actualizando las variables de entorno
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
