@@ -212,16 +212,6 @@ $ : sudo pacman -S
           |----------| xorg-apps
           |
           |----------| gdm
-          |
-          |----------| gnome
-          |
-          |----------| gnome-extra
-          |
-          |----------| rustup
-          |
-          |----------| julia
-          |
-          |----------| dart
 
 
 $ : sudo yay -S
