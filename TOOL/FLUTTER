@@ -11,29 +11,29 @@ $ : source .bashrc                                                              
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	Link : https://developer.android.com/studio#downloads
+Link : https://developer.android.com/studio#downloads
 
-	$ : tar -xf <android-studio...>
+$ : tar -xf <android-studio...>
 
-  $ : cd android-studio/bin
+$ : cd android-studio/bin
 
-  $ : ./studio.sh
+$ : ./studio.sh
 
-	$ : sudo apt update && sudo apt install android-sdk
+$ : sudo apt update && sudo apt install android-sdk
 
-	// Botones : ANDROID SDK |---> SDK TOOLS |---> ANDORID SDK LINEA COMANDOS TOOLS
-
-
-	$ : flutter emulators --create [--name xyz]
-
-	$ : flutter emulators
-
-	$ : flutter emulators --launch <emulator_id>
+// Botones : ANDROID SDK |---> SDK TOOLS |---> ANDORID SDK LINEA COMANDOS TOOLS
 
 
-	// En otra terminal del mismo proyecto ejecutamos
+$ : flutter emulators --create [--name xyz]
 
-	$ : flutter run
+$ : flutter emulators
+
+$ : flutter emulators --launch <emulator_id>
+
+
+// En otra terminal del mismo proyecto ejecutamos
+
+$ : flutter run
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
