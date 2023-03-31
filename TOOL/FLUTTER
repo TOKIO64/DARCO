@@ -24,7 +24,6 @@ $ : ./studio.sh
 $ : sudo apt update && sudo apt install android-sdk
 
 
-
 $ : flutter emulators --create [--name xyz]
 
 $ : flutter emulators
