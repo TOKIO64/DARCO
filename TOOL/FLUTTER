@@ -19,9 +19,10 @@ $ : cd android-studio/bin
 
 $ : ./studio.sh
 
+// Botones : (ANDROID SDK) ---> (SDK TOOLS) ---> (ANDORID SDK LINEA COMANDOS TOOLS)
+
 $ : sudo apt update && sudo apt install android-sdk
 
-// Botones : ANDROID SDK |---> SDK TOOLS |---> ANDORID SDK LINEA COMANDOS TOOLS
 
 
 $ : flutter emulators --create [--name xyz]
